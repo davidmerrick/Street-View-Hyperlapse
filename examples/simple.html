@@ -8,12 +8,12 @@
 	<script src="js/GSVPano.js"></script>
 	<script src="../src/Hyperlapse.js"></script>
 	<script>
-
+        var hyperlapse;
 		function init() {
 
-			var hyperlapse = new Hyperlapse(document.getElementById('pano'), {
+			hyperlapse = new Hyperlapse(document.getElementById('pano'), {
 				lookat: new google.maps.LatLng(37.81409525128964,-122.4775045005249),
-				zoom: 1,
+				zoom: 2, // Zoom 2 looks better
 				use_lookat: true,
 				elevation: 50
 			});
@@ -54,41 +54,27 @@
 
 		$(document).ready(function(){
 				$('#pano-button').click(function(){
-						alert("Saving panorama");
+                alert("Saving panorama");
 
-						// Code to save the hyperlapse
-						var $canvas = $('#pano canvas');
-						var req = new XMLHttpRequest();
+                // Code to save the hyperlapse
+                var $canvas = $('#pano canvas');
+                var req = new XMLHttpRequest();
 
-						// open a POST request to our backend
-						req.open('post', 'http://localhost/~david/dumpimages/saveframe.php');
+                // open a POST request to our backend
+                req.open('post', 'export/saveframe.php');
 
-						// capture the data URL of the image
-						var data = $canvas.toDataURL();
+                // capture the data URL of the image
+                var data = hyperlapse.getCurrentImage().toDataURL();
 
-						// encode the data along with the frame identifier (and increment it)
-						data = 'data=' + encodeURIComponent(data) + '&i=' + counter++;
+                // encode the data along with the frame identifier (and increment it)
+                //data = 'data=' + encodeURIComponent(data) + '&i=' + counter++;
+                data = 'data=' + encodeURIComponent(data)
 
-					// set the appropriate request headers
-					req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-					req.setRequestHeader("Content-length", data.length);
-					req.setRequestHeader("Connection", "close");
+                // set the appropriate request headers
+                req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
-					// handle request responses
-					req.onreadystatechange = function () {
-								// continue if request is done
-								if (req.readyState === 4 && req.status === 200) {
-										// if we have not finished recording, execute another frame
-										if (counter < 150) {
-													frame();
-										} else {
-													alert('done');
-										}
-								}
-					};
-
-					// send the data
-					req.send(data);
+                // send the data
+                req.send(data);
 			});
 		});
 

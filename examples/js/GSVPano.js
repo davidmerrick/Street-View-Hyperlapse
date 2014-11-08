@@ -101,6 +101,7 @@ GSVPANO.PanoLoader = function (parameters) {
 
 		console.log('Load for', location);
 		var self = this;
+        // getPanoramaByLocation(LatLong, Search Radius (in meters))
 		_panoClient.getPanoramaByLocation(location, 50, function (result, status) {
 			if (status === google.maps.StreetViewStatus.OK) {
 				if( self.onPanoramaData ) self.onPanoramaData( result );
