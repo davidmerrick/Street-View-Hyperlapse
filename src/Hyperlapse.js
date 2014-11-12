@@ -589,6 +589,8 @@ var Hyperlapse = function(container, params) {
 	 */
 	this.length = function() { return _h_points.length; };
 
+	this.hPoints = function() { return _h_points; };
+
 	/**
 	 * @param {Number} v
 	 */
