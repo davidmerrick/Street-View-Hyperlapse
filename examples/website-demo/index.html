@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Google Street View Hyperlapse</title>
+		<meta name="description" content="Hyperlapse">
+		<meta name="viewport" content="width=device-width">
+
+
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+		<link rel="shortcut icon" type="image/ico" href="favicon.ico">
+
+		<link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed-57.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-precomposed-72.png">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-precomposed-114.png">
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-precomposed-144.png">
+
+		<link rel="stylesheet" href="css/main.css">
+
+	</head>
+	<body>
+
+		<div id="pano"></div>
+
+		<div id="logos">
+			<a href="http://www.teehanlax.com/"><img src="img/tl_logo.png" height="50" class="tllogo"></a>
+			<a href="http://www.teehanlax.com/labs"><img src="img/labs-logo.png" height="50" class="labslogo"></a>
+		</div>
+
+
+		<div id="credits">
+
+			<h3>GOOGLE STREET VIEW</h3>
+			<h1>Hyperlapse</h1>
+
+			<p>
+				A <a href="http://www.teehanlax.com/labs">Teehan+Lax Labs</a> experiment for creating interactive Google Street View hyper-lapse animations. <a href="http://www.teehanlax.com/labs/hyperlapse/">Learn more about this project.</a>
+			</p>
+
+			<h3>See the possibilities</h3>
+			<p class="credits">
+				<a class="fancybox-media" href="http://vimeo.com/63653873"><img src="img/hyperlapse-video-thumbnail.jpg" /></a>
+			</p>
+
+
+			<div class="social clearfix">
+				<a href="https://twitter.com/share" class="twitter-share-button" data-url="hyperlapse.tllabs.io" data-text="Google Street View Hyperlapse: http://hyperlapse.tllabs.io - new project from @tllabs @teehanlax">Tweet</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+				<div class="g-plusone" data-size="medium" data-href="http://hyperlapse.tllabs.io"></div>
+
+				<div class="fb-like" data-href="http://hyperlapse.tllabs.io" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+			</div>
+
+			<p>
+				<a href="http://www.teehanlax.com/"><img src="img/tl_logo.png" height="50" class="tllogo"></a>
+				<a href="http://www.teehanlax.com/labs"><img src="img/labs-logo.png" height="50" class="labslogo"></a>
+			</p>
+		</div>
+
+		<div class="overlay" data-state="true">
+
+			<div class="loading">
+				<div class="tips"></div>
+				<div class="map-cover">
+					<div>
+						<h3>&nbsp;</h3>
+						<h1>Loading Hyperlapse</h1>
+						<h3><a href="#" id="cancel">Cancel</a></h3>
+					</div>
+				</div>
+				<div class="progress"><div class="bar"></div></div>
+			</div>
+
+			<div class="map-wrapper">
+
+				<div id="map"></div>
+
+				<div class="playlist">
+					<ul>
+						<li data-start="50.39661,-105.11520000000002" data-end="50.4033146934618,-105.06006622558596" data-look="50.39656,-105.01267000000001" data-elevation="29.425000000000022" data-fov="87.5"><img data-start="01_Alberta_Cloud" src="img/previews/01_Alberta_Cloud.jpg"><span>Saskatchewan Cloud</span></li>
+						<li data-start="-28.82176,29.698230000000002" data-end="-28.799938151002202,29.67121030407702" data-look="-28.78515,29.680820000000004" data-elevation="34.149812500000024" data-fov="129.84375"><img data-start="02_South_Africa_Sunset" src="img/previews/02_South_Africa_Sunset.jpg"><span>South Africa Sunset</span></li>
+						<li data-start="37.82943,-122.47973999999999" data-end="37.81406134797931,-122.4769466010498" data-look="37.80978,-122.47747000000004" data-elevation="33.58500000000002" data-fov="121.25"><img data-start="03_Golden_Gate" src="img/previews/03_Golden_Gate.jpg"><span>Golden Gate</span></li>
+						<li data-start="37.737190000000005,-119.59777000000001" data-end="37.75853861772447,-119.59751719685062" data-look="37.74192,-119.59171" data-elevation="5.199999999999996" data-fov="80"><img data-start="04_Yosemite_Waterfall" src="img/previews/04_Yosemite_Waterfall.jpg"><span>Yosemite Waterfall</span></li>
+						<li data-start="-32.11766,146.26914000000002" data-end="-32.09777671154788,146.29355275146486" data-look="-32.10336,146.28802000000002" data-elevation="13.100000000000017" data-fov="91.25"><img data-start="05_Australian_Outback" src="img/previews/05_Australian_Outback.jpg"><span>Australian Outback</span></li>
+						<li data-start="40.71416000000001,-73.99464" data-end="40.706719106495115,-74.01160506788938" data-look="40.70447,-73.98914" data-elevation="7.207500000000021" data-fov="80"><img data-start="06_Manhattan_Bridge" src="img/previews/06_Manhattan_Bridge.jpg"><span>Manhattan Bridge</span></li>
+						<li data-start="24.68784,-81.20886999999999" data-end="24.696337072435284,-81.16438200790401" data-look="24.70633,-81.12844000000001" data-elevation="11.999999999999996" data-fov="106.25"><img data-start="07_Florida_Keys" src="img/previews/07_Florida_Keys.jpg"><span>Florida Keys</span></li>
+						<li data-start="62.97410000000001,7.783770000000004" data-end="62.97113594339586,7.778835329638696" data-look="62.966370000000005,7.77179000000001" data-elevation="16.562499999999996" data-fov="91.25"><img data-start="08_Norway_Bridge" src="img/previews/08_Norway_Bridge.jpg"><span>Norway Bridge</span></li>
+						<li data-start="-26.06519,28.964140000000043" data-end="-26.08886083462831,28.968629531860415" data-look="-26.099400000000003,28.95652999999993" data-elevation="11.999999999999996" data-fov="80"><img data-start="09_South_Africa_Power_Plant" src="img/previews/09_South_Africa_Power_Plant.jpg"><span>South Africa Power Plant</span></li>
+						<li data-start="52.75676000000001,4.6830099999999675" data-end="52.765665352719935,4.692399862014895" data-look="52.775000000000006,4.698039999999992" data-elevation="22.545000000000023" data-fov="80"><img data-start="10_Netherlands_Windmill" src="img/previews/10_Netherlands_Windmill.jpg"><span>Netherlands Windmill</span></li>
+						<li data-start="22.329050000000002,114.11444000000006" data-end="22.326218675752852,114.12594591552738" data-look="22.3212,114.12966000000006" data-elevation="10.705000000000023" data-fov="80"><img data-start="11_Hong_Kong_Port" src="img/previews/11_Hong_Kong_Port.jpg"><span>Hong Kong Port</span></li>
+						<li data-start="22.34879,114.17894999999999" data-end="22.34701900112303,114.18044840271" data-look="22.355420000000002,114.17367000000002" data-elevation="-0.9600000000000208" data-fov="117.5"><img data-start="12_Hong_Kong_Tunnel" src="img/previews/12_Hong_Kong_Tunnel.jpg"><span>Hong Kong Tunnel</span></li>
+						<li data-start="-28.25429,23.603910000000003" data-end="-28.222234029306563,23.632949048095725" data-look="-28.240330000000004,23.67893" data-elevation="36.93250000000002" data-fov="113.75"><img data-start="13_South_Africa_Clouds" src="img/previews/13_South_Africa_Clouds.jpg"><span>South Africa Clouds</span></li>
+						<li data-start="47.82392,17.884860000000003" data-end="47.82999907163889,17.843440810253924" data-look="47.849560000000004,17.906270000000003" data-elevation="35.365000000000016" data-fov="91.25"><img data-start="14_Slovakia_Sun_Rays" src="img/previews/14_Slovakia_Sun_Rays.jpg"><span>Slovakia Sun Rays</span></li>
+						<li data-start="55.201190000000004,9.08561" data-end="55.237292035263344,9.097969214697287" data-look="55.24653000000001,9.13732" data-elevation="34.15750000000002" data-fov="106.25"><img data-start="15_Denmark_Clouds" src="img/previews/15_Denmark_Clouds.jpg"><span>Denmark Clouds</span></li>
+						<li data-start="22.370700000000003,114.09694" data-end="22.371924239822786,114.0998466241424" data-look="22.37385,114.10159999999996" data-elevation="13.105000000000022" data-fov="98.75"><img data-start="16_Hong_Kong_Towers" src="img/previews/16_Hong_Kong_Towers.jpg"><span>Hong Kong Towers</span></li>
+						<li data-start="33.9063,-116.56344000000001" data-end="33.8974391098385,-116.6136966801696" data-look="33.917080000000006,-116.61679000000004" data-elevation="7.039999999999996" data-fov="80"><img data-start="17_California_Windmills" src="img/previews/17_California_Windmills.jpg"><span>California Windmills</span></li>
+						<li data-start="52.64809,-9.730950000000007" data-end="52.65187700057224,-9.732164941833389" data-look="52.65334000000001,-9.721520000000055" data-elevation="0.8048125000000228" data-fov="73.59375"><img data-start="18_Irish_Island" src="img/previews/18_Irish_Island.jpg"><span>Irish Island</span></li>
+					</ul>
+					<div class="close-list"></div>
+					<div class="fade"></div>
+				</div>
+
+				<div class="expand clearfix">
+					<div class="open"></div>
+					<p>Create your own</p>
+				</div>
+
+				<div class="generate-wrapper invisible">
+						<ul class="clearfix">
+							<li class="featured"><a href="#gallery" id="gallery">Featured</a></li>
+							<li class="search"><input type="text" name="address" id="address" value="" autofocus><a href="#address" id="search" class="ir btn"><span>Search</span></a></li>
+							<li class="generate"><a href="#generate" class="btn" id="generate">Create</a></li>
+						</ul>
+				</div>
+			</div>
+		</div>
+
+		<div id="controls">
+			<div class="controller">
+
+				<div id="slider">
+					<div class="track">
+						<div class="head"></div>
+					</div>
+
+					<div class="a"></div>
+					<div class="b"></div>
+				</div>
+
+				<span>Press space to pause.</span>
+
+			</div>
+
+
+		</div>
+
+
+		<script src="js/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+
+		<script src="//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false" type="text/javascript"></script>
+
+		<script src="js/vendor/richmarker-compiled.js"></script>
+		<script src="js/vendor/Tween.js"></script>
+		<script src="js/vendor/GSVPano.js"></script>
+		<script src="js/vendor/three.min.js"></script>
+		<script src="js/maps_cache.js"></script>
+		<script src="js/vendor/hyperlapse.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.pack.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-media.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-buttons.js"></script>
+		<script src="js/main.js"></script>
+
+	</body>
+</html>
