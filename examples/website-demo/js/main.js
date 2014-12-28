@@ -1280,4 +1280,31 @@ $(function($) {
 
 	$('#controls').append('<p>© 2013 Google.</p>');
 
+	$('#pano-button').click(function(){
+		alert("Saving Hyperlapse");
+
+		var pointArray = hyperlapse.hPoints();
+
+		for(i=0; i < pointArray.length; i++){
+
+			var req = new XMLHttpRequest();
+
+			// open a POST request to our backend
+			req.open('post', '../export/saveframe.php');
+
+			// capture the data URL of the image
+			var data = pointArray[i].image.toDataURL();
+
+			// encode the data along with the frame identifier (and increment it)
+			//data = 'data=' + encodeURIComponent(data) + '&i=' + counter++;
+			data = 'data=' + encodeURIComponent(data) + '&i=' + i;
+
+			// set the appropriate request headers
+			req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+			// send the data
+			req.send(data);
+		}
+		alert("Hyperlapse saved");
+		});
 });

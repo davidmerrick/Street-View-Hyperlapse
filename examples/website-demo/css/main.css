@@ -1360,3 +1360,7 @@ a#gallery {
   opacity: 0.4;
   cursor: default;
 }
+
+#pano-button {
+  position: absolute; left: 10px; top: 10px; 
+}
