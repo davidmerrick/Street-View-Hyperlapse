@@ -55,7 +55,7 @@ getRoute = function(directions_service, request, callback) {
 						var s_json = _S(pack);
 
 						var xmlhttp = new XMLHttpRequest();
-						xmlhttp.open("POST", "/route");
+						xmlhttp.open("POST", "route.php");
 						xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 						xmlhttp.send(s_json);
 
@@ -76,6 +76,6 @@ getRoute = function(directions_service, request, callback) {
 	};
 
 	var params = request.origin.lat()+","+request.origin.lng()+","+request.destination.lat()+","+request.destination.lng();
-	cache_call.open("get", "/route?ll="+params, true);
+	cache_call.open("get", "route.php?ll="+params, true);
 	cache_call.send();
 };
